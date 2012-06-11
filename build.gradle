@@ -19,3 +19,7 @@ dependencies {
 	testCompile "org.mockito:mockito-all:1.8.5",
 		"junit:junit:4.+";
 }
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '1.0-rc-3';
+}
