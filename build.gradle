@@ -1,0 +1,21 @@
+/**
+ * Test project for providedRuntime dependency issue
+ */
+
+apply plugin: 'war';
+apply plugin: 'jetty';
+apply plugin: 'eclipse-wtp';
+
+repositories {
+	maven {
+		name 'allCombinedRepos';
+		 url 'http://repo.metabuild.net:8081/artifactory/libs-release';
+	}
+}
+
+dependencies {
+	providedCompile 'javax:javaee-web-api:6.0';
+	providedRuntime 'org.mortbay.jetty:jetty-hightide:8.1.4.v20120524';
+	testCompile "org.mockito:mockito-all:1.8.5",
+		"junit:junit:4.+";
+}
